@@ -1,0 +1,18 @@
+services:
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus
+    ports:
+      - "8081:8081"
+      - "28443:28443"
+      # https://blog.yowko.com/nexus-docker-image-rergistry/
+      - "8082:8082"
+    volumes:
+      - nexus-data:/nexus-data
+      - ./keystore.jks:/nexus-data/etc/ssl/keystore.jks
+      - ./nexus.properties:/nexus-data/etc/nexus.properties
+      - ./jetty-https.xml:/opt/sonatype/nexus/etc/jetty/jetty-https.xml
+
+volumes:
+  nexus-data:
+    name: nexus-data
