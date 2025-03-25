@@ -1,0 +1,29 @@
+services:
+  dns-bind9-webadmin:
+    image: sameersbn/bind:9.16.1-20200524
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "10000:10000/tcp"
+    volumes:
+      - "./dns_data_with_webadmin:/data"
+  
+  dns-bind9:
+    image: ubuntu/bind9:9.18-22.04_beta
+    environment:
+      - TZ=UTC
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    volumes:
+      - ./dns_data/bind/etc/named.conf.options:/etc/bind/named.conf
+      # - /path/to/cached/data:/var/cache/bind
+      - ./dns_data/bind/lib:/var/lib/bind
+  
+  dns-coredns:
+    image: coredns/coredns
+    ports:
+      - "53:53/udp"
+    volumes:
+      - ./coredns:/root/
+    command: -conf /root/Corefile

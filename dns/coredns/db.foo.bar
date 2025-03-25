@@ -1,0 +1,12 @@
+$ORIGIN foo.bar.
+@       3600 IN SOA dns.foo.bar. mail.foo.bar. (
+                                2024123016 ; serial
+                                7200       ; refresh (2 hours)
+                                3600       ; retry (1 hour)
+                                1209600    ; expire (2 weeks)
+                                3600       ; minimum (1 hour)
+                                )
+
+dns    IN  A   172.19.57.10
+test   IN  A   172.19.57.10
+beta-test IN  CNAME   test

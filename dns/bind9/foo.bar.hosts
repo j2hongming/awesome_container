@@ -1,0 +1,10 @@
+$ttl 38400
+foo.bar.      IN      SOA     03ee1ddd625c. mail.foo.bar. (
+                        1730415627
+                        10800
+                        3600
+                        604800
+                        38400 )
+foo.bar.      IN      NS      03ee1ddd625c.
+project-staging.foo.bar.  IN      A       172.19.57.10
+project-test.foo.bar.     IN      A       172.19.57.11

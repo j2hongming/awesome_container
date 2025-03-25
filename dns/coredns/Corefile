@@ -1,0 +1,11 @@
+.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+
+foo.bar:53 {
+    file /root/db.foo.bar
+    log
+    errors
+}
