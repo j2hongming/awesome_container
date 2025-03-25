@@ -28,14 +28,6 @@ For bind9 with webmin console
 mkdir -p dns_data_with_webadmin
 ```
 
-For ubuntu/bind9
-``` bash
-mkdir -p dns_data/bind/etc
-mkdir -p dns_data/bind/lib
-cp bind9/named.conf.options dns_data/bind/etc/
-cp bind9/foo.bar.hosts dns_data/bind/lib/
-```
-
 #### launch
 
 For bind9 with webmin console

@@ -13,12 +13,14 @@ services:
     environment:
       - TZ=UTC
     ports:
-      - "53:53"
-      - "53:53/udp"
+      - "10053:53"
+      - "10053:53/udp"
     volumes:
-      - ./dns_data/bind/etc/named.conf.options:/etc/bind/named.conf
+      - ./bind9/etc/named.conf:/etc/bind/named.conf
+      - ./bind9/etc/named.conf.options:/etc/bind/named.conf.options
+      - ./bind9/etc/named.conf.local:/etc/bind/named.conf.local
       # - /path/to/cached/data:/var/cache/bind
-      - ./dns_data/bind/lib:/var/lib/bind
+      - ./bind9/lib:/var/lib/bind
   
   dns-coredns:
     image: coredns/coredns
