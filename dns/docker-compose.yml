@@ -25,7 +25,7 @@ services:
   dns-coredns:
     image: coredns/coredns
     ports:
-      - "53:53/udp"
+      - "20053:53/udp"
     volumes:
       - ./coredns:/root/
     command: -conf /root/Corefile
