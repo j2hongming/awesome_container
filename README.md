@@ -45,3 +45,12 @@ docker compose up -d dns-bind9
 ``` bash
 docker compose up -d dns-coredns
 ```
+
+### how to verify
+
+``` bash
+dig @127.0.0.1 -p 10053  www.google.com
+dig @127.0.0.1 -p 10053  project-staging.foo.bar.
+dig @127.0.0.1 -p 20053  www.google.com
+dig @127.0.0.1 -p 20053  test.foo.bar
+```
