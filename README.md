@@ -54,3 +54,12 @@ dig @127.0.0.1 -p 10053  project-staging.foo.bar.
 dig @127.0.0.1 -p 20053  www.google.com
 dig @127.0.0.1 -p 20053  test.foo.bar
 ```
+
+## Inference - vLLM
+
+``` bash
+docker compose up -d
+```
+
+- vllm on the http://localhost:8000
+- validate the inference by the Open WUI on the http://localhost:3000
